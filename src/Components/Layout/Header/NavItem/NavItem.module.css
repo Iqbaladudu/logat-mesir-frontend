@@ -1,0 +1,3 @@
+.button {
+  @apply btn bg-blue-core border-0 text-gray-900 hover:text-gray-100;
+}

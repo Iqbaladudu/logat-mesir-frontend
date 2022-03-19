@@ -1,0 +1,61 @@
+import styles from './Footer.module.css'
+import FooterGroup, { ListFormat, Types } from './FooterGroup/FooterGroup'
+import { Props as ButtonProps } from '../../Button/Button'
+import Image from 'next/image'
+import FooterLeftAsset from '/public/footer-assets.svg'
+import FooterRightAsset from '/public/footer-assets-2.svg'
+
+const services: Array<ListFormat> = [
+    { label: "Kursus", url: "/" },
+    { label: "Kamus Digital", url: "/" },
+    { label: "Video Belajar", url: "/" },
+    { label: "Konsultasi", url: "/" },
+    { label: "Komunitas", url: "/" },
+]
+
+const socialMedia: Array<ListFormat> = [
+    { label: "Instagram", url: "/" },
+    { label: "Facebook", url: "/" },
+    { label: "WhatsApp", url: "/" },
+    { label: "Tiktok", url: "/" },
+]
+
+const OnclickHandler = () => {
+    alert("Check")
+}
+
+const heroButton: ButtonProps = {
+    label: "Contact Us",
+    url: "/",
+    onClick: OnclickHandler,
+    className: "btn w-[278px] h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] rounded-[20px] leading-[54px]"
+}
+
+const heroTitle = ["Logat Mesir", "& La.Adry"]
+
+const Footer = () => {
+    return (
+        <>
+            <footer className="flex border overflow-hidden h-[661px] justify-center items-center gap-[177px] relative">
+                <div className={styles.leftAsset}>
+                    <Image src={FooterLeftAsset} height={114} width={111} />
+                </div>
+                <div className={styles.rightAsset}>
+                    <Image src={FooterRightAsset} height={156} width={143} />
+                </div>
+                <div>
+                    <FooterGroup type={Types.Hero} title={heroTitle} desc="Full one page untuk online course yang meyediakan berbagai ilmu dalam bentuk online/daring" button={heroButton} />
+                </div>
+                <div className={styles.listwrapper}>
+                    <FooterGroup type={Types.List} title="Produk" list={services} />
+                    <FooterGroup type={Types.List} title="Sosial Media" list={socialMedia} />
+                </div>
+            </footer>
+            <div className="flex justify-center text-white items-center h-[86px] bg-[#FF002E] font-bold text-[24px] leading-[36px]">
+                Copyright@ La.Adry & Logat Mesir.All Reserved
+            </div>
+        </>
+    )
+}
+
+export default Footer

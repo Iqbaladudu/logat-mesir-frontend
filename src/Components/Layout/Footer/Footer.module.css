@@ -1,0 +1,15 @@
+.listwrapper {
+  @apply p-10 flex flex-row gap-[250px] footer h-[600px] bg-white text-base-content;
+}
+
+.leftAsset {
+  @apply absolute;
+  top: 11px;
+  left: 59px;
+}
+
+.rightAsset {
+  @apply absolute;
+  top: 9px;
+  right: 100px;
+}

@@ -1,0 +1,9 @@
+.header {
+  @apply h-[111px] w-full bg-blue-core sticky shadow-xl overflow-hidden;
+  top: 0;
+  z-index: 100;
+}
+
+.btn {
+  @apply bg-yellow-lm text-gray-900 hover:bg-gray-100 hover:text-gray-900 border-0 shadow-xl text-xl;
+}

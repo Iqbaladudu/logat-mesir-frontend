@@ -1,0 +1,10 @@
+.humansvg {
+  @apply absolute;
+  right: 100px;
+}
+
+.herodot {
+  @apply absolute;
+  top: 482px;
+  left: 53px;
+}
