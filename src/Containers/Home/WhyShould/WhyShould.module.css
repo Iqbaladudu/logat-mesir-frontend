@@ -1,0 +1,15 @@
+.right {
+  @apply absolute h-auto w-auto;
+}
+
+.rightAsset {
+  @apply absolute;
+  left: 58px;
+  top: 18px;
+}
+
+.triagleAsset {
+  @apply absolute;
+  right: 300px;
+  bottom: 0px;
+}

@@ -1,17 +1,17 @@
 import Button from "../../../Components/Button/Button";
 import Container from "../../../Components/Container/Container";
-import HeroLeftAssets from '/public/HeroSVG.svg'
-import HumanSVG from '/public/HeroObject.svg'
-import HeroDots from '/public/Dots.svg'
+import HeroLeftAssets from '/public/HeroSVG.svg';
+import HumanSVG from '/public/HeroObject.svg';
+import HeroDots from '/public/Dots.svg';
 import Image from "next/image";
-import styles from "./Hero.module.css"
+import styles from "./Hero.module.css";
 
 const Hero = () => {
     return (
         <section className="overflow-hidden">
             <Container width="w-screen" height="h-[730px]">
-                <div className="flex justify-center items-center gap-80 h-full w-full relative overflow-hidden">
-                    <div className="flex flex-col gap-10 text-blue-secondary w-[551px] z-50 overflow-hidden">
+                <div className="flex justify-center items-center gap-80 h-full w-full relative">
+                    <div className="flex flex-col gap-10 text-blue-secondary w-[551px] z-50">
                         <div className="font-semibold text-[54px] leading-[81px]">
                             <h1>Mari Belajar Bahasa Ammiyah Mesir</h1>
                         </div>

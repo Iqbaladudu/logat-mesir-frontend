@@ -36,7 +36,7 @@ const heroTitle = ["Logat Mesir", "& La.Adry"]
 const Footer = () => {
     return (
         <>
-            <footer className="flex border overflow-hidden h-[661px] justify-center items-center gap-[177px] relative">
+            <footer className="flex overflow-hidden h-[661px] justify-center items-center gap-[177px] relative">
                 <div className={styles.leftAsset}>
                     <Image src={FooterLeftAsset} height={114} width={111} />
                 </div>
