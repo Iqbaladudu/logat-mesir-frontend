@@ -1,19 +1,33 @@
 import Container from "../../Components/Container/Container";
 import SplitContainer from "./SplitContainer/SplitContainer";
-import styles from "./Dashboard.module.css"
 import Card from "../../Components/Card/Card";
 import Search from "./Search/Search";
 import messageIcon from "/public/messageIcon.svg"
 import notifIcon from "/public/notifIcon.svg"
 import Image from "next/image";
+import StudentInfoList from "./StudentInfoList/StudentInfoList";
+import { dashboardData } from "./DashboardData";
+import studentAvatar from "/public/studentIcon.svg"
 
 const Dashboard = () => {
     return (
         <section className="overflow-hidden">
             <Container width="w-screen" height="h-screen">
                 <SplitContainer>
-                    <Card className="w-[354px] h-[684px] bg-yellow-lm rounded-lg">
-                        
+                    <Card customized={true} className="w-[354px] flex-col gap-[50px] h-[684px] bg-yellow-lm rounded-lg">
+                        <div className="h-[76px] w-[76px] flex justify-center items-center mx-auto rounded-full bg-white overflow-hidden">
+                            <Image
+                                src={studentAvatar}
+                                height="46"
+                                width="46"
+                                alt="Student"
+                            />
+                        </div>
+                        <div className="flex flex-col w-full h-[474px] gap-[40px] items-center"> 
+                            {dashboardData.map((props, index) => (
+                                    <StudentInfoList {...props} key={index} />
+                            ))}
+                        </div>
                     </Card>
                     <div className="h-full w-full flex flex-col justify-center items-center gap-[69px]">
                         <Search />
@@ -36,10 +50,10 @@ const Dashboard = () => {
                             />
                         </div>
                         <div className="flex flex-col justify-center items-center gap-[50px]">
-                            <Card customized={true} className="w-[347px] h-[210px] bg-yellow-lm rounded-lg">
+                            {[1, 2].map((_, index) => (
+                            <Card customized={true} key={index} className="w-[347px] h-[210px] bg-yellow-lm rounded-lg">
                             </Card>
-                            <Card customized={true} className="w-[347px] h-[210px] bg-yellow-lm rounded-lg">
-                            </Card>
+                            ))}
                         </div>
                     </div>
                 </SplitContainer>
