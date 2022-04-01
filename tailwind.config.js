@@ -16,6 +16,7 @@ module.exports = {
         "blue-core": "#4ECDC4",
         "blue-secondary": "#06766E",
         "yellow-lm": "#FFDD00",
+        "red-lm": "#FF002E",
       },
     },
   },

@@ -23,13 +23,13 @@ const Hero = () => {
                         </div>
                     </div>
                     <div>
-                        <Image src={HeroLeftAssets} width={744} height={574} />
+                        <Image src={HeroLeftAssets} width={744} height={574} alt="" />
                     </div>
                     <div className={styles.humansvg}>
-                        <Image src={HumanSVG} width={744} height={574} />
+                        <Image src={HumanSVG} width={744} height={574} alt="" />
                     </div>
                     <div className={styles.herodot}>
-                        <Image src={HeroDots} width={158} height={158} />
+                        <Image src={HeroDots} width={158} height={158} alt="" />
                     </div>
                 </div>
             </Container>
