@@ -1,0 +1,11 @@
+.yellow {
+	@apply absolute;
+	top: 18px;
+	left: 58px;
+}
+
+.red {
+	@apply absolute;
+	top: 50%;
+	left: 75%;
+}

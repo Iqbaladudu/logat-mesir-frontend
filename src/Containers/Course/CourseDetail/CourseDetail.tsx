@@ -4,8 +4,8 @@ import SplitContainer from "../../Dashboard/SplitContainer/SplitContainer";
 import Line from "/public/whyusline.svg";
 import Image from "next/image";
 import Card from "../../../Components/Card/Card";
-import VideoIcon from "/public/VideoIcon.svg";
 import clsx from "clsx";
+import VideoCard from "../../../Components/Card/VideoCard/VideoCard";
 
 const CourseDetail = () => {
 	return (
@@ -29,13 +29,7 @@ const CourseDetail = () => {
 								/>
 							</div>
 						</div>
-						<div className="flex-1 flex">
-							<Card className="w-[599px] h-[300px] bg-blue-core rounded-[20px]">
-								<div className="flex justify-center items-center w-[180px] h-[180px] bg-white rounded-full">
-									<Image src={VideoIcon} height="104" width="104" alt="" />
-								</div>
-							</Card>
-						</div>
+						<VideoCard />
 					</SplitContainer>
 				</div>
 				<div className="flex-1 flex flex-col justify-center items-center gap-[32px]">
