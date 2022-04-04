@@ -1,4 +1,3 @@
 .herotitle {
-  @apply text-[64px] font-bold w-[373px];
-  line-height: 96px;
+	@apply text-[40px] xl:text-[64px] xl:font-bold xl:w-[373px] xl:leading-[96px];
 }

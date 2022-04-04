@@ -28,7 +28,7 @@ const heroButton: ButtonProps = {
 	label: "Contact Us",
 	onClick: OnclickHandler,
 	className:
-		"btn w-[278px] h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] rounded-[20px] leading-[54px]",
+		"btn xl:w-[278px] xl:h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] xl:rounded-[20px] xl:leading-[54px]",
 };
 
 const heroTitle = ["Logat Mesir", "& La.Adry"];
@@ -36,7 +36,7 @@ const heroTitle = ["Logat Mesir", "& La.Adry"];
 const Footer = () => {
 	return (
 		<>
-			<footer className="flex overflow-hidden h-[661px] justify-center items-center gap-[177px] relative">
+			<footer className="flex flex-wrap overflow-hidden h-[661px] justify-center items-center relative">
 				<div className={styles.leftAsset}>
 					<Image src={FooterLeftAsset} height={114} width={111} alt="" />
 				</div>
