@@ -56,8 +56,8 @@ const Footer = () => {
 					<FooterGroup type={Types.List} title="Sosial Media" list={socialMedia} />
 				</div>
 			</footer>
-			<div className="flex justify-center text-white items-center xl:h-[86px] bg-[#FF002E] font-semibold xl:font-bold xl:text-[24px] xl:leading-[36px]">
-				Copyright@ La.Adry & Logat Mesir.All Reserved
+			<div className="flex justify-center text-center text-white items-center xl:h-[86px] bg-[#FF002E] font-semibold xl:font-bold xl:text-[24px] xl:leading-[36px]">
+				<p>Copyright@ La.Adry & Logat Mesir</p>
 			</div>
 		</>
 	);
