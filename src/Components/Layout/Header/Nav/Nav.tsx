@@ -3,7 +3,7 @@ import NavItem from "../NavItem/NavItem";
 const Nav = () => {
 	return (
 		<>
-			<nav className="btn-group rounded-lg">
+			<nav className="hidden xl:btn-group xl:rounded-lg">
 				<NavItem label="Beranda" href="/" />
 				<NavItem label="Kursus" href="/" />
 				<NavItem label="Daftar" href="/daftar" />
