@@ -1,7 +1,7 @@
 .button {
-  @apply bg-yellow-lm border-none text-blue-secondary text-[30px] font-semibold hover:bg-yellow-lm hover:ring-blue-secondary hover:ring-4 relative;
+	@apply bg-yellow-lm border-none text-blue-secondary text-[30px] font-semibold hover:bg-yellow-lm hover:ring-blue-secondary hover:ring-4 relative;
 }
 
 .buttonsecondary {
-  @apply btn bg-transparent border-none font-semibold text-white hover:bg-transparent hover:ring-white hover:ring-4 ring-2 ring-white relative;
+	@apply btn bg-transparent border-none font-semibold text-white hover:bg-transparent hover:ring-white hover:ring-4 ring-2 ring-white relative;
 }

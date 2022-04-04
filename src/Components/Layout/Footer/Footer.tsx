@@ -36,7 +36,7 @@ const heroTitle = ["Logat Mesir", "& La.Adry"];
 const Footer = () => {
 	return (
 		<>
-			<footer className="flex flex-wrap overflow-hidden h-[661px] justify-center items-center relative">
+			<footer className="flex flex-wrap overflow-hidden h-auto py-10 gap-10 xl:h-[661px] relative border">
 				<div className={styles.leftAsset}>
 					<Image src={FooterLeftAsset} height={114} width={111} alt="" />
 				</div>
@@ -56,7 +56,7 @@ const Footer = () => {
 					<FooterGroup type={Types.List} title="Sosial Media" list={socialMedia} />
 				</div>
 			</footer>
-			<div className="flex justify-center text-white items-center h-[86px] bg-[#FF002E] font-bold text-[24px] leading-[36px]">
+			<div className="flex justify-center text-white items-center xl:h-[86px] bg-[#FF002E] font-semibold xl:font-bold xl:text-[24px] xl:leading-[36px]">
 				Copyright@ La.Adry & Logat Mesir.All Reserved
 			</div>
 		</>

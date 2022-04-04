@@ -1,15 +1,11 @@
 .listwrapper {
-	@apply xl:p-10 flex flex-row xl:gap-[250px] xl:footer xl:h-[600px] xl:bg-white xl:text-base-content;
+	@apply xl:p-10 flex flex-row xl:gap-[250px] footer xl:h-[600px] bg-white justify-center text-base-content;
 }
 
 .leftAsset {
-	@apply absolute;
-	top: 11px;
-	left: 59px;
+	@apply top-[0px] left-[0px] xl:top-[11px] xl:left-[59px] absolute;
 }
 
 .rightAsset {
-	@apply absolute;
-	top: 9px;
-	right: 100px;
+	@apply top-[50px] right-[10px] xl:top-[9px] xl:right-[100px] absolute;
 }
