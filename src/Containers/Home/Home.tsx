@@ -4,13 +4,15 @@ import WhyShould from "./WhyShould/WhyShould";
 import WhyUs from "./WhyUs/WhyUs";
 
 const Home = () => {
-    return (
-        <Layout>
-            <Hero />
-            <WhyUs />
-            <WhyShould />
-        </Layout>
-    );
-}
+	return (
+		<section className="overflow-hidden">
+			<Layout>
+				<Hero />
+				<WhyUs />
+				<WhyShould />
+			</Layout>
+		</section>
+	);
+};
 
 export default Home;
