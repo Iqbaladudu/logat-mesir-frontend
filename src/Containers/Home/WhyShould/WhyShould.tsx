@@ -8,14 +8,14 @@ import TriagleYellow from "/public/triagleYellow.svg";
 
 const WhyShould = () => {
 	return (
-		<section className="overflow-hidden">
+		<section className="overflow-hidden my-10">
 			<Container width="w-screen" height="h-auto py-10 xl:h-[730px]">
 				<div className="flex justify-center items-center relative">
-					<div className="flex font-medium flex-col items-center text-blue-secondary gap-[37px]">
-						<div className="text-[35px] flex xl:text-[64px] leading-[96px] flex-wrap text-center xl:w-[715px] z-50">
+					<div className="flex justify-center font-medium flex-col items-center text-blue-secondary gap-[37px]">
+						<div className="text-[30px] font-medium flex xl:text-[64px] leading-[96px] flex-wrap text-center xl:w-[715px] z-50">
 							Kenapa Harus belajar Ammiyah Mesir?
 						</div>
-						<div className="text-[24px] leading-[36px] w-[378px] text-center z-50">
+						<div className="text-[20px] xl:text-[35px] xl:leading-[36px] w-[378px] text-center z-50">
 							Full one page untuk online course yang meyediakan berbagai ilmu dalam
 							bentuk online/daring
 						</div>

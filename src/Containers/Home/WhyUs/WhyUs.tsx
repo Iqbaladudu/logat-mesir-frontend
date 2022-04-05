@@ -22,7 +22,7 @@ const WhyUs = () => {
 				<div className="flex w-full h-full flex-col text-blue-secondary justify-center items-center gap-[64px] relative overflow-hidden">
 					<div className="flex flex-col p-5 text-[30px] xl:text-[48px] leading-[72px] font-medium w-[400px] xl:w-[537px] overflow-hidden">
 						<h1 className="text-center">Kenapa harus belajar di Logat Mesir?</h1>
-						<p className="flex justify-center text-center">
+						<p className="  flex justify-center text-center">
 							<Image src={WhyUsLine} width={315} height={10} alt="" />
 						</p>
 					</div>
