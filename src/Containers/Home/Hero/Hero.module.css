@@ -1,10 +1,7 @@
 .humansvg {
-  @apply absolute;
-  right: 100px;
+	@apply absolute hidden xl:flex xl:right-[0px] xl:top-[300px];
 }
 
 .herodot {
-  @apply absolute;
-  top: 482px;
-  left: 53px;
+	@apply absolute top-0 left-[10%] xl:top-[482px] xl:left-[53px];
 }
