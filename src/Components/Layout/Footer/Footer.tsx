@@ -43,7 +43,7 @@ const Footer = () => {
 				<div className={styles.rightAsset}>
 					<Image src={FooterRightAsset} height={156} width={143} alt="" />
 				</div>
-				<div>
+				<div className="z-50">
 					<FooterGroup
 						type={Types.Hero}
 						title={heroTitle}
