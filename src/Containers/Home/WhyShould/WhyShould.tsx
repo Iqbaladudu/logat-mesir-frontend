@@ -19,12 +19,12 @@ const WhyShould = () => {
 							Full one page untuk online course yang meyediakan berbagai ilmu dalam
 							bentuk online/daring
 						</div>
-						<div>
+						{/* <div>
 							<Button
 								label="Join with Us"
 								className="btn xl:w-[278px] h-[50px] xl:h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] rounded-[5px] xl:rounded-[20px] leading-[54px];"
-							/>
-						</div>
+							/>  
+						</div> */}
 					</div>
 					<div className="hidden xl:flex">
 						<Image src={RightAssets} width={696} height={589} alt="" />
