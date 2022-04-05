@@ -1,20 +1,18 @@
 .label {
-  @apply relative font-bold w-full;
+	@apply relative font-bold w-full;
 }
 
 .input {
-  @apply appearance-none rounded-lg text-blue-secondary py-3 px-4 w-full;
-  @apply focus:outline-none focus:ring-2 focus:ring-blue-secondary focus:border-blue-secondary;
+	@apply appearance-none rounded-lg text-blue-secondary py-3 px-4  w-5/6 sm:w-full;
+	@apply focus:outline-none focus:ring-2 focus:ring-blue-secondary focus:border-blue-secondary;
 }
 
 .eye {
-  @apply h-6 w-6 absolute;
+	@apply h-6 w-6 absolute right-[10%] top-[70%] sm:right-0 sm:top-[70%];
 
-  transform: translate(-50%, -50%);
-  right: 0;
-  top: 70%;
+	transform: translate(-50%, -50%);
 }
 
 .eyeError {
-  top: 56%;
+	top: 56%;
 }
