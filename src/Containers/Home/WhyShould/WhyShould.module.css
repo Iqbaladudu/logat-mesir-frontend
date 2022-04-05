@@ -1,15 +1,11 @@
 .right {
-  @apply absolute h-auto w-auto;
+	@apply absolute h-auto w-auto;
 }
 
 .rightAsset {
-  @apply absolute;
-  left: 58px;
-  top: 18px;
+	@apply absolute left-0 xl:left-[58px] top-[10%] xl:top-[18px];
 }
 
 .triagleAsset {
-  @apply absolute;
-  right: 300px;
-  bottom: 0px;
+	@apply absolute right-0 xl:right-[300px] bottom-[7%] xl:bottom-0;
 }
