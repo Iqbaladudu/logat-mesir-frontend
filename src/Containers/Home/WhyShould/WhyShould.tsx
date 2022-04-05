@@ -12,7 +12,7 @@ const WhyShould = () => {
 			<Container width="w-screen" height="h-auto py-10 xl:h-[730px]">
 				<div className="flex justify-center items-center relative">
 					<div className="flex justify-center font-medium flex-col items-center text-blue-secondary gap-[37px]">
-						<div className="text-[30px] font-medium flex xl:text-[64px] leading-[96px] flex-wrap text-center xl:w-[715px] z-50">
+						<div className="text-[30px] font-medium flex xl:text-[64px] xl:leading-[96px] flex-wrap text-center xl:w-[715px] z-50">
 							Kenapa Harus belajar Ammiyah Mesir?
 						</div>
 						<div className="text-[20px] xl:text-[35px] xl:leading-[36px] w-[378px] text-center z-50">

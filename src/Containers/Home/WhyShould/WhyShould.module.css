@@ -3,9 +3,9 @@
 }
 
 .rightAsset {
-	@apply absolute left-0 xl:left-[58px] top-[10%] xl:top-[18px];
+	@apply hidden absolute left-0 xl:left-[58px] top-[10%] xl:top-[18px];
 }
 
 .triagleAsset {
-	@apply absolute right-0 xl:right-[300px] bottom-[7%] xl:bottom-0;
+	@apply hidden absolute right-0 xl:right-[300px] bottom-[7%] xl:bottom-0;
 }
