@@ -18,11 +18,7 @@ const Register = () => {
 				flex="flex justify-center items-center text-blue-secondary"
 			>
 				<Card
-<<<<<<< HEAD
 					className="w-[500px] h-[800px] rounded-[30px] gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]"
-=======
-					className="flex w-[500px] h-[850px] rounded-[30px] gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]"
->>>>>>> responsive-web
 					headerText="Masuk"
 					headerStyle="text-blue-secondary text-[36px] leading-[54px] font-bold"
 				>
@@ -38,11 +34,7 @@ const Register = () => {
 								label="Nama Depan"
 								type="text"
 								name="first_name"
-<<<<<<< HEAD
 								placeholder="Masukkan alamat email"
-=======
-								placeholder="Muhammad"
->>>>>>> responsive-web
 								className="mb-5 flex flex-col items-center sm:items-start sm:flex-none"
 							/>
 							<Input
@@ -51,11 +43,7 @@ const Register = () => {
 								label="Nama Tengah"
 								type="text"
 								name="middle_name"
-<<<<<<< HEAD
 								placeholder="Masukkan alamat email"
-=======
-								placeholder=""
->>>>>>> responsive-web
 								className="mb-5 flex flex-col items-center sm:items-start sm:flex-none"
 							/>
 							<Input
@@ -64,11 +52,7 @@ const Register = () => {
 								label="Nama Belakang"
 								type="text"
 								name="last_name"
-<<<<<<< HEAD
 								placeholder="Masukkan alamat email"
-=======
-								placeholder="Iqbal"
->>>>>>> responsive-web
 								className="mb-5 flex flex-col items-center sm:items-start sm:flex-none"
 							/>
 							<Input
@@ -82,11 +66,7 @@ const Register = () => {
 								label="Email"
 								type="email"
 								name="email"
-<<<<<<< HEAD
 								placeholder="Masukkan alamat email"
-=======
-								placeholder="iqbal.adudu@blamail.com"
->>>>>>> responsive-web
 								className="mb-5 flex flex-col items-center sm:items-start sm:flex-none"
 							/>
 							<Input
@@ -100,11 +80,7 @@ const Register = () => {
 								className="flex flex-col items-center sm:items-start sm:flex-none"
 							/>
 
-<<<<<<< HEAD
 							<a href="#" className="font-semibold mt-8 mb-4 hover:underline">
-=======
-							<a href="#" className="font-semibold mt-3 mb-4 hover:underline">
->>>>>>> responsive-web
 								Lupa kata sandi?
 							</a>
 
