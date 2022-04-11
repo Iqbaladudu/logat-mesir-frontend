@@ -1,0 +1,3 @@
+.nextprev {
+	@apply h-auto w-auto p-2 bg-white rounded self-start;
+}

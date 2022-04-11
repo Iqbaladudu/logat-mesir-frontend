@@ -13,6 +13,7 @@ import { ReactNode, useState } from "react";
 import { useComponentLogic } from "../../Containers/Register/hooks";
 import Button from "../Button/Button";
 import Container from "../Container/Container";
+import styles from "./Multistep.module.css";
 
 export interface Props {
 	children: ReactNode[];
@@ -44,11 +45,12 @@ const Multistep = ({ children }: Props) => {
 				<div className="flex justify-center items-center flex-col gap-3">
 					{isFinish && (
 						<button
+							className={styles.nextprev}
 							onClick={() => {
 								changePrevPosition();
 							}}
 						>
-							prev
+							Kembali
 						</button>
 					)}
 					{children[position]}
@@ -62,11 +64,12 @@ const Multistep = ({ children }: Props) => {
 					) : (
 						<>
 							<button
+								className={styles.nextprev}
 								onClick={() => {
 									changeNextPosition();
 								}}
 							>
-								Next
+								Lanjut
 							</button>
 						</>
 					)}
