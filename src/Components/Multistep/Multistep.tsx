@@ -14,7 +14,7 @@ import { useComponentLogic } from "../../Containers/Register/hooks";
 import Button from "../Button/Button";
 import Container from "../Container/Container";
 
-interface Props {
+export interface Props {
 	children: ReactNode[];
 }
 
@@ -24,17 +24,15 @@ const Multistep = ({ children }: Props) => {
 
 	const total = children.length - 1;
 
-	const changeNextPositionAndSaveData = (children: ReactNode[]) => {
+	const changeNextPosition = () => {
 		position === total ? null : setPosition(position + 1);
 	};
 
 	const changePrevPosition = () => {
-		position < 0 ? null : setPosition(position + 1);
+		position < 0 ? null : setPosition(position - 1);
 	};
 
 	const isFinish = position === total;
-
-	console.log(children.values());
 
 	return (
 		<>
@@ -43,19 +41,29 @@ const Multistep = ({ children }: Props) => {
 				width="w-[500px] bg-yellow-lm"
 				flex="flex justify-center items-center flex-col"
 			>
-				<div>
+				<div className="flex justify-center items-center flex-col gap-3">
+					{isFinish && (
+						<button
+							onClick={() => {
+								changePrevPosition();
+							}}
+						>
+							prev
+						</button>
+					)}
 					{children[position]}
 					{isFinish ? (
 						<Button
 							type="submit"
 							label="Daftar"
+							secondary
 							className="btn w-[278px] h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] rounded-[20px] leading-[54px] mx-auto"
 						/>
 					) : (
 						<>
 							<button
 								onClick={() => {
-									changeNextPositionAndSaveData(children);
+									changeNextPosition();
 								}}
 							>
 								Next

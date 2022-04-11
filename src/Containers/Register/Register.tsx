@@ -8,6 +8,7 @@ import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
 
 import Multistep from "../../Components/Multistep/Multistep";
+import { useState } from "react";
 
 const Register = () => {
 	const { register, handleSubmit, onSubmit, errors } = useComponentLogic();
@@ -19,9 +20,6 @@ const Register = () => {
 				height="h-screen"
 				flex="flex justify-center items-center text-blue-secondary"
 			>
-				<div className="flex justify-center">
-					<Image src={LoginAvatar} height={84} width={84} alt="" />
-				</div>
 				<div>
 					<form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
 						<Multistep>
@@ -55,7 +53,7 @@ const Register = () => {
 									className="mb-5 flex flex-col items-center sm:items-start sm:flex-none"
 								/>
 							</div>
-							<div>
+							<div className="flex flex-col">
 								<Input
 									register={register}
 									errors={errors}
