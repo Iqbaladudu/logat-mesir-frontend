@@ -1,3 +1,7 @@
 .button {
-  @apply btn bg-blue-core border-0 text-gray-900 hover:text-gray-100;
+	@apply btn bg-blue-core border-0 text-lg text-gray-900 hover:text-gray-100 rounded-sm;
+}
+
+.burger {
+	@apply btn bg-blue-core border-0 text-gray-100 hover:text-gray-100;
 }
