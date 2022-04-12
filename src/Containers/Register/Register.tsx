@@ -20,7 +20,11 @@ const Register = () => {
 				height="h-screen"
 				flex="flex justify-center items-center text-blue-secondary"
 			>
-				<div>
+				<Card
+					className="w-[350px] h-[550px] sm:w-[500px] sm:h-[577px] flex-wrap rounded-[10px] xl:rounded-[30px] gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]"
+					headerText="Daftar"
+					headerStyle="text-blue-secondary text-[36px] leading-[54px] font-bold"
+				>
 					<form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
 						<Multistep>
 							<div>
@@ -79,13 +83,15 @@ const Register = () => {
 									className="flex flex-col items-center sm:items-start sm:flex-none"
 								/>
 
-								<a href="#" className="font-semibold mt-8 mb-4 hover:underline">
-									Lupa kata sandi?
-								</a>
+								<div className="ml-8 sm:ml-0 mt-8 mb-4">
+									<a href="#" className="font-semibold hover:underline">
+										Lupa kata sandi?
+									</a>
+								</div>
 							</div>
 						</Multistep>
 					</form>
-				</div>
+				</Card>
 			</Container>
 		</section>
 	);

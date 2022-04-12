@@ -38,8 +38,8 @@ const Multistep = ({ children }: Props) => {
 	return (
 		<>
 			<Container
-				height="h-[500px]"
-				width="w-[500px] bg-yellow-lm"
+				height="h-auto"
+				width="w-auto"
 				flex="flex justify-center items-center flex-col"
 			>
 				<div className="flex justify-center items-center flex-col gap-3">

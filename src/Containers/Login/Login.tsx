@@ -62,6 +62,7 @@ const Login = () => {
 							<Button
 								type="submit"
 								label="Masuk"
+								secondary
 								className="btn w-[278px] h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] rounded-[20px] leading-[54px] mx-auto"
 							/>
 						</form>
