@@ -14,7 +14,7 @@ const Register = () => {
 	const { register, handleSubmit, onSubmit, errors } = useComponentLogic();
 
 	return (
-		<section className="overflow-hidden">
+		<section className="overflow-hidden bg-blue-core">
 			<Container
 				width="w-screen"
 				height="h-screen"
