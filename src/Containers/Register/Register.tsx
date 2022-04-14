@@ -2,16 +2,24 @@ import { useComponentLogic } from "./hooks";
 import { REG_EXP } from "../../constants/constants";
 import Container from "../../Components/Container/Container";
 import Card from "../../Components/Card/Card";
-import LoginAvatar from "/public/loginAvatar.svg";
-import Image from "next/image";
-import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
-
 import Multistep from "../../Components/Multistep/Multistep";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../../hook";
+import { AppDispatch } from "../../store/store";
+import { firstName as changeFirstName } from "../../store/registrationReducer";
 
 const Register = () => {
 	const { register, handleSubmit, onSubmit, errors } = useComponentLogic();
+	const dispatch: AppDispatch = useAppDispatch();
+	const { firstName, middleName, lastName, email, password, passwordConfirm } =
+		useAppSelector(({ registration }) => {
+			return { ...registration };
+		});
+
+	const handleClick = () => {
+		dispatch(changeFirstName("Muhammad"));
+		console.log("cek:", firstName);
+	};
 
 	return (
 		<section className="overflow-hidden bg-blue-core">
@@ -25,6 +33,7 @@ const Register = () => {
 					headerText="Daftar"
 					headerStyle="text-blue-secondary text-[36px] leading-[54px] font-bold"
 				>
+					<button onClick={handleClick}>Halo</button>
 					<form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
 						<Multistep>
 							<div>
