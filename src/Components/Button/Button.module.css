@@ -3,5 +3,5 @@
 }
 
 .buttonsecondary {
-	@apply btn bg-white border-none font-semibold text-gray-800 text-lg relative;
+	@apply btn bg-white border-none font-semibold text-gray-800 text-lg relative hover:bg-white;
 }

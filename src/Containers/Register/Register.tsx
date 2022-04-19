@@ -6,10 +6,19 @@ import Input from "../../Components/Input/Input";
 import Multistep from "../../Components/Multistep/Multistep";
 import { useAppDispatch, useAppSelector } from "../../../hook";
 import { AppDispatch } from "../../store/store";
-import { firstName as changeFirstName } from "../../store/registrationReducer";
+import {
+	firstName as changeFirstName,
+	middleName as changeMiddleName,
+	lastName as changeLastName,
+	email as changeEmail,
+	password as changePassword,
+	passwordConfir as changePasswordConfirm,
+} from "../../store/registrationReducer";
+import { useState } from "react";
 
 const Register = () => {
 	const { register, handleSubmit, onSubmit, errors } = useComponentLogic();
+	const [registerDisabled, setRegisterDisabled] = useState(true);
 	const dispatch: AppDispatch = useAppDispatch();
 	const { firstName, middleName, lastName, email, password, passwordConfirm } =
 		useAppSelector(({ registration }) => {
@@ -33,7 +42,6 @@ const Register = () => {
 					headerText="Daftar"
 					headerStyle="text-blue-secondary text-[36px] leading-[54px] font-bold"
 				>
-					<button onClick={handleClick}>Halo</button>
 					<form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
 						<Multistep>
 							<div>

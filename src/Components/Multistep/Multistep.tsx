@@ -27,6 +27,7 @@ const Multistep = ({ children }: Props) => {
 
 	const changeNextPosition = () => {
 		position === total ? null : setPosition(position + 1);
+		console.log(position);
 	};
 
 	const changePrevPosition = () => {
