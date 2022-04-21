@@ -1,11 +1,11 @@
 import type { FormInputs as RegisterInput } from "./interfaces";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
-import axios from "axios";
-
-const fetcher = (url: string) => axios.post(url).then((res) => res.data);
+import axios, { AxiosResponse } from "axios";
+import { useState } from "react";
 
 export const useComponentLogic = () => {
+	const [isLoading, setIsLoading] = useState(false);
 	const {
 		register,
 		handleSubmit,
@@ -13,7 +13,15 @@ export const useComponentLogic = () => {
 	} = useForm<RegisterInput>();
 
 	const onSubmit: SubmitHandler<RegisterInput> = (data) => {
-		console.log("data:", data);
+		setIsLoading(true);
+		axios
+			.post("http://localhost:8000/account/register/", { ...data })
+			.then(({ data, status }) => {
+				data && setIsLoading(false);
+				document.cookie = `logat-mesir-token=${data.token}; path=/`;
+				console.log(data);
+			})
+			.catch((err) => console.log(err));
 	};
 
 	return {
@@ -21,5 +29,6 @@ export const useComponentLogic = () => {
 		handleSubmit,
 		onSubmit,
 		errors,
+		isLoading,
 	};
 };

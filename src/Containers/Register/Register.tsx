@@ -17,8 +17,8 @@ import {
 import { useState } from "react";
 
 const Register = () => {
-	const { register, handleSubmit, onSubmit, errors } = useComponentLogic();
-	const [registerDisabled, setRegisterDisabled] = useState(true);
+	const { register, handleSubmit, onSubmit, errors, isLoading } =
+		useComponentLogic();
 	const dispatch: AppDispatch = useAppDispatch();
 	const { firstName, middleName, lastName, email, password, passwordConfirm } =
 		useAppSelector(({ registration }) => {
@@ -58,18 +58,18 @@ const Register = () => {
 								<Input
 									register={register}
 									errors={errors}
-									label="Nama Tengah"
+									label="Nama Belakang"
 									type="text"
-									name="middle_name"
+									name="last_name"
 									placeholder=""
 									className="mb-5 flex flex-col items-center sm:items-start sm:flex-none"
 								/>
 								<Input
 									register={register}
 									errors={errors}
-									label="Nama Belakang"
+									label="Username"
 									type="text"
-									name="last_name"
+									name="username"
 									placeholder="Iqbal"
 									className="mb-5 flex flex-col items-center sm:items-start sm:flex-none"
 								/>

@@ -1,9 +1,5 @@
 import Link from "next/link";
-import type {
-	ButtonHTMLAttributes,
-	FormEventHandler,
-	MouseEventHandler,
-} from "react";
+import type { ButtonHTMLAttributes, MouseEventHandler } from "react";
 import styles from "./Button.module.css";
 import clsx from "clsx";
 
@@ -14,6 +10,7 @@ export type Props = {
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 	className?: string;
 	type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
+	disable?: boolean;
 };
 
 const Button: React.FC<Props> = ({
@@ -23,10 +20,12 @@ const Button: React.FC<Props> = ({
 	onClick,
 	className,
 	type,
+	disable = false,
 }) => {
 	return onClick ? (
 		<button
 			type={type}
+			disabled={disable}
 			onClick={onClick}
 			className={clsx(
 				styles.button,
@@ -39,6 +38,7 @@ const Button: React.FC<Props> = ({
 	) : (
 		<button
 			type={type}
+			disabled={disable}
 			className={clsx(
 				styles.button,
 				className,

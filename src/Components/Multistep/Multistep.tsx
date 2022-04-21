@@ -21,7 +21,7 @@ export interface Props {
 
 const Multistep = ({ children }: Props) => {
 	const [position, setPosition] = useState(0);
-	const { register, handleSubmit, onSubmit, errors } = useComponentLogic();
+	const { isLoading } = useComponentLogic();
 
 	const total = children.length - 1;
 
@@ -57,6 +57,7 @@ const Multistep = ({ children }: Props) => {
 					{children[position]}
 					{isFinish ? (
 						<Button
+							disable={isLoading}
 							type="submit"
 							label="Daftar"
 							secondary
