@@ -18,7 +18,7 @@ export const useComponentLogic = () => {
 			.post("http://localhost:8000/account/register/", { ...data })
 			.then(({ data, status }) => {
 				data && setIsLoading(false);
-				document.cookie = `logat-mesir-token=${data.token}; path=/`;
+				document.cookie = `logat_mesir_token=${data.token}; path=/`;
 				console.log(data);
 			})
 			.catch((err) => console.log(err));
