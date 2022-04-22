@@ -119,7 +119,7 @@ const EventRegister = () => {
 
 	return (
 		<div className="h-screen w-full flex items-center justify-center bg-blue-core">
-			<Box className="flex justify-center items-center w-[350px] h-[750px] max-h-[900px] min-h-[750px] sm:w-[500px] sm:h-[577px] flex-wrap rounded-sm xl:rounded-sm gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]">
+			<Box className="flex justify-center items-center w-[350px] h-[80%] min-h-[80%] sm:w-[500px] sm:h-[577px] flex-wrap rounded-sm xl:rounded-sm gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]">
 				<Div className="header my-3 text-lg rounded w-[200px] xl:w-[300px] text-center font-bold text-blue-secondary">
 					Form Pendaftaran Kursus Bahasa Amiyah Mesir
 				</Div>
