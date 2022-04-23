@@ -30,7 +30,7 @@ export interface FormData {
 	kekeluargaan: string;
 	address: string;
 	phone: string;
-	classType: "online" | "offline" | string;
+	classType: "online" | "offline" | "private" | string;
 	paymentMethod: "COD" | "Transfer" | string;
 }
 
@@ -127,7 +127,7 @@ const EventRegister = () => {
 					<Div className="header my-3 text-lg rounded w-[200px] xl:w-[300px] text-center font-bold text-blue-secondary">
 						Daftar Kursus
 					</Div>
-					<Box className="flex justify-center items-center w-[350px] h-[450px] lg:h-[50%] sm:w-[20%] flex-wrap rounded-sm xl:rounded-sm gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]">
+					<Box className="flex justify-center items-center w-[85%] md:w-[60%] lg:w-[350px] h-[450px] lg:h-[50%] flex-wrap rounded-sm xl:rounded-sm gap-5 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]">
 						<Backdrop
 							sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
 							open={loading}
@@ -135,7 +135,7 @@ const EventRegister = () => {
 						>
 							<CircularProgress color="success" />
 						</Backdrop>
-						<div>
+						<div className="flex flex-col gap-5">
 							<Div className="header my-3 text-sm rounded text-center">
 								{FormTitles[page]}
 							</Div>
