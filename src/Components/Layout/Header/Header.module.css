@@ -1,5 +1,5 @@
 .header {
-	@apply h-[111px] w-full bg-blue-core sticky shadow-xl;
+	@apply h-[111px] w-full bg-blue-core fixed shadow-xl;
 	top: 0;
 	z-index: 100;
 }
