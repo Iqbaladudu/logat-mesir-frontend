@@ -9,7 +9,7 @@ const index = () => {
 		<>
 			<Head>
 				<title>Daftar - Logat Mesir</title>
-				<meta property="og:title" content="My page title" key="title" />
+				<meta property="og:title" content="Daftar - Logat Mesir" key="title" />
 			</Head>
 			<EventRegister />
 		</>
