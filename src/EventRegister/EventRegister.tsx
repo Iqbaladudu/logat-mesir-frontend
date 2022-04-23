@@ -12,6 +12,7 @@ import {
 import axios from "axios";
 import { useState } from "react";
 import Done from "../Containers/Register/Done";
+import Four from "./Steps/Four";
 import One from "./Steps/One";
 import Three from "./Steps/Three";
 import Two from "./Steps/Two";
@@ -94,8 +95,10 @@ const EventRegister = () => {
 			return <One formData={formData} setFormData={setFormData} />;
 		} else if (page === 1) {
 			return <Two formData={formData} setFormData={setFormData} />;
-		} else {
+		} else if (page === 2) {
 			return <Three formData={formData} setFormData={setFormData} />;
+		} else {
+			return <Four formData={formData} setFormData={setFormData} />;
 		}
 	};
 
@@ -120,7 +123,7 @@ const EventRegister = () => {
 			{succes ? (
 				<Done />
 			) : (
-				<div className="h-screen w-full flex flex-col items-center justify-center bg-blue-core">
+				<div className="h-screen w-screen flex flex-col items-center justify-center bg-blue-core">
 					<Div className="header my-3 text-lg rounded w-[200px] xl:w-[300px] text-center font-bold text-blue-secondary">
 						Daftar Kursus
 					</Div>
