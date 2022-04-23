@@ -1,9 +1,9 @@
 .card {
-	@apply gap-2 flex-col bg-white h-[279px] w-[273px] rounded-[20px] shadow-[0_8px_4px_rgba(0,0,0,0.25)] border-[1px] border-[#E5E5E5] text-center;
+	@apply gap-2 flex-col bg-white h-[279px] w-[273px] rounded-md shadow-[0_8px_4px_rgba(0,0,0,0.25)] border-[1px] border-[#E5E5E5] text-center;
 }
 
 .headerText {
-	@apply text-[30px] xl:text-[36px] leading-[54px] font-medium;
+	@apply text-[30px] xl:text-[36px] leading-[54px];
 }
 
 .bodyText {

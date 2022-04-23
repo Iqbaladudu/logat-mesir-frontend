@@ -5,8 +5,10 @@ import RightAssets from "/public/RightWhyShouldUs.png";
 import TinyRightAsset from "/public/footer-assets.svg";
 import styles from "./WhyShould.module.css";
 import TriagleYellow from "/public/triagleYellow.svg";
+import { useRouter } from "next/router";
 
 const WhyShould = () => {
+	const router = useRouter();
 	return (
 		<section className="overflow-hidden my-10">
 			<Container width="w-screen" height="h-auto py-10 xl:h-[730px]">
@@ -22,7 +24,8 @@ const WhyShould = () => {
 						<div>
 							<Button
 								label="Join with Us"
-								className="btn xl:w-[278px] h-[50px] xl:h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] rounded-[5px] xl:rounded-[20px] leading-[54px];"
+								className="btn xl:w-[278px] h-[50px] xl:h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] rounded-md leading-[54px];"
+								onClick={() => router.push("/daftar")}
 							/>
 						</div>
 					</div>

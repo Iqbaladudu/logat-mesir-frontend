@@ -4,6 +4,7 @@ import { Props as ButtonProps } from "../../Button/Button";
 import Image from "next/image";
 import FooterLeftAsset from "/public/footer-assets.svg";
 import FooterRightAsset from "/public/footer-assets-2.svg";
+import { useRouter } from "next/router";
 
 const services: Array<ListFormat> = [
 	{ label: "Kursus", url: "/" },
@@ -14,26 +15,27 @@ const services: Array<ListFormat> = [
 ];
 
 const socialMedia: Array<ListFormat> = [
-	{ label: "Instagram", url: "/" },
+	{ label: "Instagram", url: "https://instagram.com/logat.mesir" },
 	{ label: "Facebook", url: "/" },
-	{ label: "WhatsApp", url: "/" },
-	{ label: "Tiktok", url: "/" },
+	{ label: "WhatsApp", url: "https://api.whatsapp.com/send?phone=201011843082" },
+	{ label: "Tiktok", url: "https://vm.tiktok.com/ZMLgHDdQf" },
 ];
-
-const OnclickHandler = () => {
-	alert("Check");
-};
-
-const heroButton: ButtonProps = {
-	label: "Contact Us",
-	onClick: OnclickHandler,
-	className:
-		"btn xl:w-[278px] xl:h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] xl:rounded-[20px] xl:leading-[54px]",
-};
 
 const heroTitle = ["Logat Mesir", "& La.Adry"];
 
 const Footer = () => {
+	const router = useRouter();
+	const OnclickHandler = () => {
+		router.replace("https://api.whatsapp.com/send?phone=201011843082");
+	};
+
+	const heroButton: ButtonProps = {
+		label: "Contact Us",
+		onClick: OnclickHandler,
+		className:
+			"btn xl:w-[278px] xl:h-[67px] shadow-[0_5px_7px_rgba(0,0,0,0.25)] rounded-md xl:leading-[54px]",
+	};
+
 	return (
 		<>
 			<footer className="flex flex-wrap xl:flex-nowrap overflow-hidden h-auto py-10 gap-10 xl:h-[661px] relative">

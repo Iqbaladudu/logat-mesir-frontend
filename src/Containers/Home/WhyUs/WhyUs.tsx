@@ -5,15 +5,41 @@ import LeftAssets from "/public/why-us-asset.svg";
 import WhyUsLine from "/public/whyusline.svg";
 import WhyUsDots from "/public/whyusdots.svg";
 import Image from "next/image";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
+import VerifiedIcon from "@mui/icons-material/Verified";
+import GroupIcon from "@mui/icons-material/Group";
 
-const cardProps: CardProps = {
-	className: styles.card,
-	headerText: "Card Text",
-	headerStyle: styles.headerText,
-	bodyText:
-		"Full one page untuk online course yang meyediakan berbagai ilmu dalam bentuk online/daring.",
-	bodyStyle: styles.bodyText,
-};
+const cardProps: CardProps[] = [
+	{
+		className: styles.card,
+		headerText: <LibraryBooksIcon fontSize="large" />,
+		headerStyle: styles.headerText,
+		bodyText: "Mendapat buku cetak & PDF kosakata",
+		bodyStyle: styles.bodyText,
+	},
+	{
+		className: styles.card,
+		headerText: <AccessTimeFilledIcon fontSize="large" />,
+		headerStyle: styles.headerText,
+		bodyText: "Konsultasi 24 jam dengan tutor",
+		bodyStyle: styles.bodyText,
+	},
+	{
+		className: styles.card,
+		headerText: <VerifiedIcon fontSize="large" />,
+		headerStyle: styles.headerText,
+		bodyText: "Tutor berpengalaman",
+		bodyStyle: styles.bodyText,
+	},
+	{
+		className: styles.card,
+		headerText: <GroupIcon fontSize="large" />,
+		headerStyle: styles.headerText,
+		bodyText: "Group WA komunitas bahasa Amiyah Mesir",
+		bodyStyle: styles.bodyText,
+	},
+];
 
 const WhyUs = () => {
 	return (
@@ -27,10 +53,9 @@ const WhyUs = () => {
 						</p>
 					</div>
 					<div className="flex justify-center flex-wrap items-center gap-[71px]">
-						<Card {...cardProps} />
-						<Card {...cardProps} />
-						<Card {...cardProps} />
-						<Card {...cardProps} />
+						{cardProps.map((props, index) => (
+							<Card {...props} key={index} />
+						))}
 					</div>
 					<div className={styles.assetsLeft}>
 						<Image src={LeftAssets} height={200} width={200} alt="" />

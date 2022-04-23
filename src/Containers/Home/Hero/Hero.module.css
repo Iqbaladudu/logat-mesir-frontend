@@ -5,3 +5,7 @@
 .herodot {
 	@apply absolute top-0 left-[10%] xl:top-[482px] xl:left-[53px];
 }
+
+.wrapper {
+	@apply flex justify-center items-center mt-[50px] xl:mt-0 xl:items-center flex-wrap xl:flex-nowrap gap-[50px] xl:gap-80 h-full w-full relative bg-[url('/egypt.jpg')] bg-fixed bg-cover xl:bg-none;
+}
