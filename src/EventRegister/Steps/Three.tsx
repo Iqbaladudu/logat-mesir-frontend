@@ -1,6 +1,7 @@
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { FormData } from "../EventRegister";
+import { MenuItem, Zoom } from "@mui/material";
 
 interface Props {
 	formData: FormData;
@@ -17,51 +18,46 @@ const Three = ({ formData, setFormData }: Props) => {
 			noValidate
 			autoComplete="off"
 		>
-			<div className="flex flex-col">
-				<TextField
-					error={
-						/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formData.email) ===
-						false
-					}
-					className="bg-white rounded-lg"
-					required
-					id="outlined-required"
-					label="Email"
-					value={formData.email}
-					onChange={(e) =>
-						setFormData({
-							...formData,
-							email: e.target.value,
-						})
-					}
-				/>
-				<TextField
-					className="bg-white rounded-lg"
-					type="number"
-					error={
-						/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(
-							formData.phone
-						) === false
-					}
-					helperText={
-						/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(
-							formData.phone
-						) === false
-							? "Contoh: +20xxxxxxxx"
-							: null
-					}
-					required
-					id="outlined-required"
-					label="WhatsApp"
-					value={formData.phone}
-					onChange={(e) =>
-						setFormData({
-							...formData,
-							phone: e.target.value,
-						})
-					}
-				/>
-			</div>
+			<Zoom
+				in
+				style={{
+					transitionDuration: "1000ms",
+				}}
+			>
+				<div className="flex flex-col">
+					<TextField
+						error={
+							/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formData.email) ===
+							false
+						}
+						className="bg-white rounded-lg"
+						required
+						id="outlined-required"
+						label="Email"
+						value={formData.email}
+						onChange={(e) =>
+							setFormData({
+								...formData,
+								email: e.target.value,
+							})
+						}
+					/>
+					<TextField
+						className="bg-white rounded-lg"
+						type="number"
+						required
+						id="outlined-required"
+						label="WhatsApp"
+						value={formData.phone}
+						onChange={(e) =>
+							setFormData({
+								...formData,
+								phone: e.target.value,
+							})
+						}
+					/>
+				</div>
+			</Zoom>
 		</Box>
 	);
 };

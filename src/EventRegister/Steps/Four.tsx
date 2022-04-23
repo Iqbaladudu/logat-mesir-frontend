@@ -1,23 +1,14 @@
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { FormData } from "../EventRegister";
-import axios from "axios";
-import { Zoom } from "@mui/material";
+import { MenuItem, Zoom } from "@mui/material";
 
 interface Props {
 	formData: FormData;
 	setFormData: Function;
 }
 
-interface Province {
-	id: string;
-	name: string;
-}
-
-const fetcher = async (url: string) =>
-	await axios.get(url).then((res) => res.data);
-
-const Two = ({ formData, setFormData }: Props) => {
+const Four = ({ formData, setFormData }: Props) => {
 	return (
 		<Box
 			component="form"
@@ -35,35 +26,41 @@ const Two = ({ formData, setFormData }: Props) => {
 			>
 				<div className="flex flex-col">
 					<TextField
-						required
-						id="outlined-required"
-						label="Alamat Sekarang"
 						className="bg-white rounded-lg"
-						value={formData.address}
+						id="outlined-select"
+						select
+						label="Jenis kelas"
+						value={formData.classType}
 						onChange={(e) =>
 							setFormData({
 								...formData,
-								address: e.target.value,
+								classType: e.target.value,
 							})
 						}
-					/>
+					>
+						<MenuItem value="online">Online</MenuItem>
+						<MenuItem value="offline">Offline</MenuItem>
+					</TextField>
 					<TextField
 						className="bg-white rounded-lg"
-						required
-						id="outlined-required"
-						label="Asal/Kekeluargaan"
-						value={formData.kekeluargaan}
+						id="outlined-select"
+						select
+						label="Metode Pembayaran"
+						value={formData.paymentMethod}
 						onChange={(e) =>
 							setFormData({
 								...formData,
-								kekeluargaan: e.target.value,
+								paymentMethod: e.target.value,
 							})
 						}
-					/>
+					>
+						<MenuItem value="COD">Cash on Delivery(COD)</MenuItem>
+						<MenuItem value="transfer">Transfer</MenuItem>
+					</TextField>
 				</div>
 			</Zoom>
 		</Box>
 	);
 };
 
-export default Two;
+export default Three;

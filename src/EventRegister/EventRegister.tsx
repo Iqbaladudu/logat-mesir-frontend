@@ -1,6 +1,8 @@
 import {
+	Backdrop,
 	Box,
 	Button,
+	CircularProgress,
 	FormControlLabel,
 	FormGroup,
 	LinearProgress,
@@ -9,6 +11,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
+import Done from "../Containers/Register/Done";
 import One from "./Steps/One";
 import Three from "./Steps/Three";
 import Two from "./Steps/Two";
@@ -21,72 +24,69 @@ const Div = styled("div")(({ theme }) => ({
 
 export interface FormData {
 	first_name: string;
-	middle_name?: string;
 	last_name?: string;
 	email: string;
-	province: string;
-	province_id?: string;
-	city: string;
-	city_id?: string;
-	regency: string;
-	regency_id?: string;
-	district: string;
-	district_id?: string;
 	kekeluargaan: string;
 	address: string;
 	phone: string;
+	classType: "online" | "offline" | string;
+	paymentMethod: "COD" | "Transfer" | string;
 }
 
 const EventRegister = () => {
+	const [loading, setLoading] = useState(false);
+	const [succes, setSuccess] = useState(false);
 	const [isDataValid, setIsDataValid] = useState(false);
 	const [progress, setProgress] = useState(33.33);
 	const [page, setPage] = useState(0);
 	const [formData, setFormData] = useState<FormData>({
 		first_name: "",
-		middle_name: "",
 		last_name: "",
 		email: "",
-		province: "",
-		province_id: "",
-		city: "",
-		city_id: "",
-		regency: "",
-		regency_id: "",
-		district: "",
-		district_id: "",
 		kekeluargaan: "",
 		address: "",
 		phone: "",
+		classType: "",
+		paymentMethod: "",
 	});
 
-	const FormTitles = ["Informasi Pribadi", "Alamat", "Kontak"];
+	const FormTitles = ["Informasi Pribadi", "Alamat", "Kontak", "Lain-lain"];
 
 	const handleNext = () => {
 		setPage((i) => i + 1);
-		setProgress((i) => i + 33.33);
+		setProgress((i) => i + 25);
 	};
 
-	const handleSubmit = () => {
-		axios
+	const whileSuccess = () => {
+		if (loading && page === FormTitles.length - 1) {
+			return true;
+		} else if (loading === false && page === FormTitles.length - 1) {
+			setSuccess(true);
+			return false;
+		}
+	};
+
+	const handleSubmit = async () => {
+		await setLoading(true);
+		await axios
 			.post(
 				"https://api.steinhq.com/v1/storages/6262deffbca21f053e8d560f/Sheet1",
 				[
 					{
 						first_name: formData.first_name,
-						middle_name: formData.middle_name,
 						last_name: formData.last_name,
-						province: formData.province,
-						regency: formData.regency,
-						district: formData.district,
-						city: formData.city,
 						kekeluargaan: formData.kekeluargaan,
 						address: formData.address,
+						email: formData.email,
 						phone: formData.phone,
+						classType: formData.classType,
+						paymentMethod: formData.paymentMethod,
 					},
 				]
 			)
-			.then((res) => console.log(res))
-			.catch((err) => console.log("eror", err));
+			.then((_res) => setLoading(false))
+			.catch((err) => console.log("error", err))
+			.then(() => whileSuccess());
 	};
 
 	const PageDisplay = () => {
@@ -102,14 +102,12 @@ const EventRegister = () => {
 	const handleValidation = () => {
 		if (
 			formData.first_name !== "" &&
-			formData.province !== "" &&
-			formData.city !== "" &&
-			formData.regency !== "" &&
-			formData.district !== "" &&
 			formData.email !== "" &&
 			formData.phone !== "" &&
 			formData.address !== "" &&
-			formData.kekeluargaan !== ""
+			formData.kekeluargaan !== "" &&
+			formData.classType !== "" &&
+			formData.paymentMethod !== ""
 		) {
 			setIsDataValid(true);
 		} else {
@@ -118,52 +116,69 @@ const EventRegister = () => {
 	};
 
 	return (
-		<div className="h-screen w-full flex items-center justify-center bg-blue-core">
-			<Box className="flex justify-center items-center w-[350px] h-[80%] min-h-[80%] sm:w-[500px] sm:h-[577px] flex-wrap rounded-sm xl:rounded-sm gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]">
-				<Div className="header my-3 text-lg rounded w-[200px] xl:w-[300px] text-center font-bold text-blue-secondary">
-					Form Pendaftaran Kursus Bahasa Amiyah Mesir
-				</Div>
-				<div>
-					<Div className="header my-3 text-sm rounded text-center">
-						{FormTitles[page]}
+		<>
+			{succes ? (
+				<Done />
+			) : (
+				<div className="h-screen w-full flex flex-col items-center justify-center bg-blue-core">
+					<Div className="header my-3 text-lg rounded w-[200px] xl:w-[300px] text-center font-bold text-blue-secondary">
+						Daftar Kursus
 					</Div>
-					<div className="body">{PageDisplay()}</div>
-					{page === FormTitles.length - 1 && (
-						<FormGroup className="text-blue-secondary">
-							<FormControlLabel
-								control={<Switch onChange={handleValidation} />}
-								label="Bismillah"
+					<Box className="flex justify-center items-center w-[350px] h-[40%] lg:h-[40%] min-h-[40%] sm:w-[20%] flex-wrap rounded-sm xl:rounded-sm gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]">
+						<Backdrop
+							sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+							open={loading}
+							className="flex justify-center items-center"
+						>
+							<CircularProgress color="success" />
+						</Backdrop>
+						<div>
+							<Div className="header my-3 text-sm rounded text-center">
+								{FormTitles[page]}
+							</Div>
+							<div className="body">{PageDisplay()}</div>
+							{page === FormTitles.length - 1 && (
+								<FormGroup className="text-blue-secondary">
+									<FormControlLabel
+										control={<Switch onChange={handleValidation} />}
+										label="Bismillah"
+									/>
+								</FormGroup>
+							)}
+							<div className="footer w-auto flex justify-between">
+								<Button
+									variant="outlined"
+									className="bg-white hover:bg-white"
+									disabled={page === 0}
+									onClick={() => {
+										setPage((i) => i - 1);
+										setProgress((i) => i - 25);
+									}}
+								>
+									Prev
+								</Button>
+								<Button
+									variant="outlined"
+									className="bg-white hover:bg-white"
+									disabled={!isDataValid && page === FormTitles.length - 1}
+									onClick={() => {
+										page === FormTitles.length - 1 ? handleSubmit() : handleNext();
+										handleValidation();
+									}}
+								>
+									{page === FormTitles.length - 1 ? "Daftar" : "Next"}
+								</Button>
+							</div>
+							<LinearProgress
+								value={progress}
+								variant="determinate"
+								className="my-5"
 							/>
-						</FormGroup>
-					)}
-					<div className="footer w-auto flex justify-between">
-						<Button
-							variant="outlined"
-							className="bg-white hover:bg-white"
-							disabled={page === 0}
-							onClick={() => {
-								setPage((i) => i - 1);
-								setProgress((i) => i - 33.33);
-							}}
-						>
-							Prev
-						</Button>
-						<Button
-							variant="outlined"
-							className="bg-white hover:bg-white"
-							disabled={!isDataValid && page === FormTitles.length - 1}
-							onClick={() => {
-								page === FormTitles.length - 1 ? handleSubmit() : handleNext();
-								handleValidation();
-							}}
-						>
-							{page === FormTitles.length - 1 ? "Daftar" : "Next"}
-						</Button>
-					</div>
-					<LinearProgress value={progress} variant="determinate" className="my-5" />
+						</div>
+					</Box>
 				</div>
-			</Box>
-		</div>
+			)}{" "}
+		</>
 	);
 };
 

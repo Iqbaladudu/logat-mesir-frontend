@@ -1,6 +1,7 @@
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { FormData } from "../EventRegister";
+import { Zoom } from "@mui/material";
 
 interface Props {
 	formData: FormData;
@@ -17,58 +18,40 @@ const One = ({ formData, setFormData }: Props) => {
 			noValidate
 			autoComplete="off"
 		>
-			<div className="flex flex-col">
-				<TextField
-					required
-					id="outlined-required"
-					label="Nama Depan"
-					value={formData.first_name}
-					className="bg-white rounded-lg"
-					onChange={(e) =>
-						setFormData({
-							...formData,
-							first_name: e.target.value,
-						})
-					}
-				/>
-				<TextField
-					id="outlined"
-					label="Nama Tengah"
-					value={formData.middle_name}
-					className="bg-white rounded-lg"
-					onChange={(e) =>
-						setFormData({
-							...formData,
-							middle_name: e.target.value,
-						})
-					}
-				/>
-				<TextField
-					id="outlined"
-					label="Nama Belakang"
-					className="bg-white rounded-lg"
-					value={formData.last_name}
-					onChange={(e) =>
-						setFormData({
-							...formData,
-							last_name: e.target.value,
-						})
-					}
-				/>
-				<TextField
-					className="bg-white rounded-lg"
-					required
-					id="outlined-required"
-					label="Kekeluargaan"
-					value={formData.kekeluargaan}
-					onChange={(e) =>
-						setFormData({
-							...formData,
-							kekeluargaan: e.target.value,
-						})
-					}
-				/>
-			</div>
+			<Zoom
+				in
+				style={{
+					transitionDuration: "1000ms",
+				}}
+			>
+				<div className="flex flex-col">
+					<TextField
+						required
+						id="outlined-required"
+						label="Nama Depan"
+						value={formData.first_name}
+						className="bg-white rounded-lg"
+						onChange={(e) =>
+							setFormData({
+								...formData,
+								first_name: e.target.value,
+							})
+						}
+					/>
+					<TextField
+						id="outlined"
+						label="Nama Belakang"
+						className="bg-white rounded-lg"
+						value={formData.last_name}
+						onChange={(e) =>
+							setFormData({
+								...formData,
+								last_name: e.target.value,
+							})
+						}
+					/>
+				</div>
+			</Zoom>
 		</Box>
 	);
 };
