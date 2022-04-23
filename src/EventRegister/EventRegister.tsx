@@ -38,7 +38,7 @@ const EventRegister = () => {
 	const [loading, setLoading] = useState(false);
 	const [succes, setSuccess] = useState(false);
 	const [isDataValid, setIsDataValid] = useState(false);
-	const [progress, setProgress] = useState(33.33);
+	const [progress, setProgress] = useState(25);
 	const [page, setPage] = useState(0);
 	const [formData, setFormData] = useState<FormData>({
 		first_name: "",
@@ -127,7 +127,7 @@ const EventRegister = () => {
 					<Div className="header my-3 text-lg rounded w-[200px] xl:w-[300px] text-center font-bold text-blue-secondary">
 						Daftar Kursus
 					</Div>
-					<Box className="flex justify-center items-center w-[350px] h-[40%] lg:h-[40%] min-h-[40%] sm:w-[20%] flex-wrap rounded-sm xl:rounded-sm gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]">
+					<Box className="flex justify-center items-center w-[350px] h-[50%] lg:h-[40%] min-h-[40%] sm:w-[20%] flex-wrap rounded-sm xl:rounded-sm gap-4 bg-yellow-lm flex-col shadow-[0_8px_6px_rgba(0,0,0,0.32)]">
 						<Backdrop
 							sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
 							open={loading}
