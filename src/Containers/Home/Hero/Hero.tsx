@@ -14,10 +14,10 @@ const Hero = () => {
 			<Container width="w-screen" height="h-[730px]">
 				<div className={styles.wrapper}>
 					<div className="flex flex-col gap-5 xl:gap-10 text-blue-secondary w-[551px] z-50">
-						<div className="font-medium p-1 xl:font-semibold text-center text-[40px] xl:text-[54px] leading-[60px] xl:leading-[81px] text-white">
+						<div className="font-medium p-1 xl:font-semibold text-center text-[40px] xl:text-[54px] leading-[60px] xl:leading-[81px] text-white xl:text-blue-secondary">
 							<h1>Mari Belajar Bahasa Ammiyah Mesir</h1>
 						</div>
-						<div className="p-2 font-normal text-center xl:font-semibold text-[24px] leading-[36px] text-white">
+						<div className="p-2 font-normal text-center xl:font-semibold text-[24px] leading-[36px] text-white xl:text-blue-secondary">
 							Lebih Mudah dengan Metode yang Asik dan Seru
 						</div>
 						<div className="flex justify-center items-center">
