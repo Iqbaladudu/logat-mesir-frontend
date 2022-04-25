@@ -120,7 +120,7 @@ const EventRegister = () => {
 
 	return (
 		<>
-			{succes ? (
+			{!succes ? (
 				<Done />
 			) : (
 				<div className="h-screen w-screen flex flex-col items-center justify-center bg-blue-core">
