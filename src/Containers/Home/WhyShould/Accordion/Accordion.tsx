@@ -80,7 +80,7 @@ export default function CustomizedAccordions() {
 					<Typography>
 						<p>
 							1. COD setiap zona tempat tinggal (khusus pendaftar yang berdomisili di
-							Mesir
+							Mesir)
 						</p>
 						<p>
 							<p>2. Transfer Bank BNI</p>
