@@ -18,6 +18,8 @@ const Accordion = styled((props: AccordionProps) => (
 	"&:before": {
 		display: "none",
 	},
+	width: "90%",
+	margin: "auto",
 }));
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
@@ -53,7 +55,7 @@ export default function CustomizedAccordions() {
 		};
 
 	return (
-		<div>
+		<div className="w-screen">
 			<Accordion
 				expanded={expanded === "panel1"}
 				onChange={handleChange("panel1")}
