@@ -38,9 +38,9 @@ const Four = ({ formData, setFormData }: Props) => {
 							})
 						}
 					>
-						<MenuItem value="online">Online</MenuItem>
-						<MenuItem value="offline">Offline</MenuItem>
-						<MenuItem value="private">Private</MenuItem>
+						<MenuItem value="online">Online (EGP 250)</MenuItem>
+						<MenuItem value="offline">Offline (EGP 250)</MenuItem>
+						<MenuItem value="private">Private (EGP 450)</MenuItem>
 					</TextField>
 					<TextField
 						className="bg-white rounded-lg"
