@@ -60,6 +60,39 @@ export default function CustomizedAccordions() {
 				expanded={expanded === "panel1"}
 				onChange={handleChange("panel1")}
 			>
+				<AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+					<Typography>Jenis kelas apa aja yang disediakan?</Typography>
+				</AccordionSummary>
+				<AccordionDetails>
+					<Typography>
+						<p>1. Kelas Offline</p>
+						<p className="ml-5">
+							<p>- Tanggal: 5-30 Mei 2022</p>
+							<p>- Jadwal: Setiap hari Senin dan Kamis</p>
+							<p>- Tempat: Hay Sabi, Madinat Nasr</p>
+							<p>- Peserta: 30-40 peserta setiap kelas</p>
+							<p>- Durasi: 8 kali pertemuan</p>
+						</p>
+						<p>2. Kelas Online</p>
+						<p className="ml-5">
+							<p>- Tanggal: 5-31 Mei</p>
+							<p>- Jadwal: Menyusul</p>
+							<p>- Tempat: Zoom Meeting</p>
+							<p>- Peserta: 15-20 Peserta Setiap Kelas</p>
+							<p>- Durasi: 8 kali pertemuan</p>
+						</p>
+						<p>3. Kelas Privat</p>
+						<p className="ml-5">
+							<p>- Tanggal, Tempat, Jadwal dan Durasi: menyesuaikan</p>
+							<p>- Peserta: 2-3 peserta setiap kelas</p>
+						</p>
+					</Typography>
+				</AccordionDetails>
+			</Accordion>
+			<Accordion
+				expanded={expanded === "panel2"}
+				onChange={handleChange("panel2")}
+			>
 				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
 					<Typography>Berapa biaya tiap kelas?</Typography>
 				</AccordionSummary>
@@ -72,8 +105,8 @@ export default function CustomizedAccordions() {
 				</AccordionDetails>
 			</Accordion>
 			<Accordion
-				expanded={expanded === "panel2"}
-				onChange={handleChange("panel2")}
+				expanded={expanded === "panel3"}
+				onChange={handleChange("panel3")}
 			>
 				<AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
 					<Typography>Bagaimana saja metode pembayarannya?</Typography>
