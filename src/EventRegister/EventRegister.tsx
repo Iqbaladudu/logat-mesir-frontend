@@ -71,7 +71,7 @@ const EventRegister = () => {
 		await setLoading(true);
 		await axios
 			.post(
-				"https://api.steinhq.com/v1/storages/6262deffbca21f053e8d560f/Sheet1",
+				"https://api.steinhq.com/v1/storages/6262deffbca21f053e8d560f/Sheet2",
 				[
 					{
 						first_name: formData.first_name,
