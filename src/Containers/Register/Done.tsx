@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Done = () => {
 	return (
-		<div className="flex justify-center items-center flex-col h-screen w-screen bg-blue-secondary text-white">
+		<div className="flex justify-center items-center flex-col h-screen w-screen bg-blue-secondary text-white text-center">
 			<CheckCircleIcon />
 			<p>Pendaftaran Berhasil.</p>
 			<p>Terimakasih telah melakukan pendaftaran.</p>
